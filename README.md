@@ -73,4 +73,5 @@ The original CivicAlert build was deployed with the backend on **Railway** (whic
 - Admin panel for provisioning station/officer accounts instead of the shared signup code
 - Push notifications (web push / FCM) in addition to in-app Socket.io alerts
 - Heatmap view of report density per station jurisdiction
+
 - Rate-limiting + anti-abuse scoring on report submission to deter spam reports
