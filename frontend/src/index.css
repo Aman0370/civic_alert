@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  ::selection {
+    background: #2dd4bf;
+    color: #0b1220;
+  }
+  :focus-visible {
+    outline: 2px solid #2dd4bf;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-[11px] tracking-[0.2em] uppercase text-text-faint;
+  }
+  .case-id {
+    @apply font-mono text-xs text-text-muted tracking-wide;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-verified text-ink font-display font-semibold px-5 py-2.5 text-sm hover:bg-verified/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-ink-border bg-ink-surface text-text-primary font-display font-medium px-5 py-2.5 text-sm hover:bg-ink-raised transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-severity-critical text-white font-display font-semibold px-5 py-2.5 text-sm hover:bg-severity-critical/90 transition-colors disabled:opacity-40;
+  }
+  .input {
+    @apply w-full rounded-md bg-ink-surface border border-ink-border px-3.5 py-2.5 text-sm text-text-primary placeholder:text-text-faint focus:border-verified focus:ring-1 focus:ring-verified outline-none transition-colors;
+  }
+  .label {
+    @apply block text-xs font-medium text-text-muted mb-1.5;
+  }
+  .card {
+    @apply bg-ink-surface border border-ink-border rounded-lg shadow-card;
+  }
+}
+
+/* Leaflet dark tint so the map matches the control-room theme */
+.leaflet-container {
+  background: #0b1220;
+}
+.leaflet-tile {
+  filter: brightness(0.55) invert(1) contrast(0.9) hue-rotate(180deg) saturate(0.7);
+}
+.leaflet-popup-content-wrapper {
+  background: #131b2c;
+  color: #e8ecf1;
+  border: 1px solid #263352;
+  border-radius: 8px;
+}
+.leaflet-popup-tip {
+  background: #131b2c;
+}
